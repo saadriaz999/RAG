@@ -74,13 +74,13 @@ if __name__ == '__main__':
         GEMINI_EMBEDDING_MODEL, GEMINI_EMBEDDING_MODEL_NAME, Distance.EUCLID, 'gemini-760-euclidean', 760)
     print('Saved gemini vectors in database (chunk_size = 760, distance_metric = cosine similarity)')
 
-    # save vectors of preprocessed dataset created by gpt4all, chunk_size 760
-    DatabaseUtils.store_embeddings(Distance.COSINE, 'gpt4all-760-cosine', 760)
-    print('Saved gpt4all vectors in database (chunk_size = 760, distance_metric = cosine similarity)')
-
-    # save vectors of preprocessed dataset created by gpt4all, chunk_size 760
-    DatabaseUtils.store_embeddings(Distance.EUCLID, 'gpt4all-760-euclidean', 760)
-    print('Saved gpt4all vectors in database (chunk_size = 760, distance_metric = cosine similarity)')
+    # # save vectors of preprocessed dataset created by gpt4all, chunk_size 760
+    # DatabaseUtils.store_embeddings(Distance.COSINE, 'gpt4all-760-cosine', 760)
+    # print('Saved gpt4all vectors in database (chunk_size = 760, distance_metric = cosine similarity)')
+    #
+    # # save vectors of preprocessed dataset created by gpt4all, chunk_size 760
+    # DatabaseUtils.store_embeddings(Distance.EUCLID, 'gpt4all-760-euclidean', 760)
+    # print('Saved gpt4all vectors in database (chunk_size = 760, distance_metric = cosine similarity)')
 
     # ----------------------------------------------------------------------------------------------------
 
@@ -96,12 +96,12 @@ if __name__ == '__main__':
     # save vectors of preprocessed dataset created by gemini api, chunk_size 2000
     DatabaseUtils.create_and_store_embeddings(
         GEMINI_EMBEDDING_MODEL, GEMINI_EMBEDDING_MODEL_NAME, Distance.EUCLID, 'gemini-2000-euclidean', 2000)
-    print('Saved gemini vectors in database (chunk_size = 380, distance_metric = cosine similarity)')
+    print('Saved gemini vectors in database (chunk_size = 2000, distance_metric = cosine similarity)')
 
-    # save vectors of preprocessed dataset created by gpt4all, chunk_size 2000
-    DatabaseUtils.store_embeddings(Distance.COSINE, 'gpt4all-2000-cosine', 2000)
-    print('Saved gpt4all vectors in database (chunk_size = 2000, distance_metric = cosine similarity)')
-
-    # save vectors of preprocessed dataset created by gpt4all, chunk_size 2000
-    DatabaseUtils.store_embeddings(Distance.EUCLID, 'gpt4all-2000-euclidean', 2000)
-    print('Saved gpt4all vectors in database (chunk_size = 380, distance_metric = cosine similarity)')
+    # # save vectors of preprocessed dataset created by gpt4all, chunk_size 2000
+    # DatabaseUtils.store_embeddings(Distance.COSINE, 'gpt4all-2000-cosine', 2000)
+    # print('Saved gpt4all vectors in database (chunk_size = 2000, distance_metric = cosine similarity)')
+    #
+    # # save vectors of preprocessed dataset created by gpt4all, chunk_size 2000
+    # DatabaseUtils.store_embeddings(Distance.EUCLID, 'gpt4all-2000-euclidean', 2000)
+    # print('Saved gpt4all vectors in database (chunk_size = 2000, distance_metric = cosine similarity)')

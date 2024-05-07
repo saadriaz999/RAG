@@ -23,7 +23,7 @@ def create_and_store_embeddings(model, model_name, distance_metric, collection_n
     model_id = Constants.COLLECTIONS[collection_name]['model_id']
     path = ProjectUtils.get_embeddings_path(model_id)
 
-    data = data[:2]  # first 98 documents, # 3627, 5422,
+    data = data[:100]  # first 98 documents, # 3627, 5422,
 
     ids = [f"{entry['id']}-{model_id}" for entry in data]
     vectors = [EmbeddingUtils.create_embedding(entry['context'], model, model_name) for entry in data]
@@ -65,7 +65,7 @@ def store_embeddings(distance_metric, collection_name, chunk_size):
     model_id = Constants.COLLECTIONS[collection_name]['model_id']
     data = ProjectUtils.load_embeddings(chunk_size)
 
-    data = data[:2]  # first 98 documents, # 3627, 5422,
+    # data = data[:500]  # first 98 documents, # 3627, 5422,
 
     ids = [f"{entry['id']}-{model_id}" for entry in data]
     vectors = [entry['embedding'] for entry in data]

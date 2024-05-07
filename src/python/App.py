@@ -10,7 +10,7 @@ CHATBOT_MODEL_NAME = 'gemini'
 EMBEDDING_MODEL_NAME = 'gemini'
 
 COLLECTION_NAME = 'gemini-2000-cosine'
-TOP_K_RESULTS_FROM_EMBEDDING_SEARCH = 3
+TOP_K_RESULTS_FROM_EMBEDDING_SEARCH = 2
 
 CHATBOT_MODEL = ChatbotUtils.load_chatbot(CHATBOT_MODEL_NAME)
 EMBEDDING_MODEL = EmbeddingUtils.load_embedding_model(EMBEDDING_MODEL_NAME)
@@ -35,4 +35,11 @@ def search():
 
 
 if __name__ == '__main__':
-    app.run(port=5000, host='0.0.0.0', debug=True)
+    # app.run(port=5000, host='0.0.0.0', debug=True)
+
+    user_input = 'what can you tell me about therapeutic anticoagulation in trauma patients'
+    # user_input = 'Has endoscopic therapy been performed on patients and if so what are the results like'
+    # user_input = 'is hemato-oncology malignancy related to acute respiratory distress syndrome'
+    # user_input = 'can you give me possible negative outcomes of transanal endorectal pull-through (TERPT) procedure in the treatment of Hirschsprung disease (HD)'
+
+    response = QuestionAnswerUtils.rag(user_input, COLLECTION_NAME, top_k=TOP_K_RESULTS_FROM_EMBEDDING_SEARCH)
