@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  myapp:
+    build: .
+    ports:
+      - "5000:5000"
+    container_name: app
+    networks:
+      - mynetwork
+
+  qdrant:
+    image: qdrant/qdrant
+    ports:
+      - "6333:6333"
+    container_name: db
+    volumes:
+      - db-data:/data/db
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
+
+volumes:
+  db-data:
+
+#    depends_on:
+#      - qdrant
+#
+#  qdrant:
+#    image: qdrant/qdrant
+#    container_name: qdrantdb
+#    ports:
+#      - "6555:6555"
